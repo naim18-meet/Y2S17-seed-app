@@ -35,6 +35,7 @@ class User(UserMixin, Base):
 #     email = (String(100))
 #     password = (String(50))
 
+
 class Post(Base):
  	__tablename__  = 'post'
  	id = Column(Integer, primary_key=True)

@@ -41,3 +41,7 @@ def logout():
 def protected():
     return render_template('protected.html')
 
+
+##@app.route('/Makeup')
+##def Makeup()
+

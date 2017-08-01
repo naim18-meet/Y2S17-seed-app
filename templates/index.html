@@ -12,7 +12,7 @@
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <style> 
         input[type=text] {
-        width: 130px;
+        width: 200px;
         box-sizing: border-box;
         border: 2px solid #ccc;
         border-radius: 4px;
@@ -49,8 +49,9 @@
         display: block;
         color: white;
         text-align: center;
-        padding: 20px 20px;
-       text-decoration: none;
+        font-size: 22px;
+        padding: 15px 51.57px;
+        text-decoration: none
       }
 
       li a:hover {
@@ -65,6 +66,7 @@
 
 <!-- The Modal -->
 <div id="id01" class="modal">
+<div id='play_button'>
   <span onclick="document.getElementById('id01').style.display='none'" 
 class="close" title="Close Modal">&times;</span>
 
@@ -74,9 +76,10 @@ class="close" title="Close Modal">&times;</span>
       <img src="img_avatar2.png" alt="Avatar" class="">
     </div>
 
+
     <div class="container">
       <label><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="password" placeholder="Enter Username" name="uname" required>
 
       <label><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
@@ -88,8 +91,12 @@ class="close" title="Close Modal">&times;</span>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       <span class="psw"><a href="#">Forgot password?</a></span>
+      </div>
+
     </div>
   </form>
+  <br>
+
 </div>
 <script>
 // Get the modal
@@ -101,25 +108,38 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
 </script>
+
+<br>
 
       <div>
           <form>
-              <input type="text" name="search" placeholder="Search..">
+              <input type="text" name="search" placeholder="Search...">
           </form>
+
+          
+          <br>
       </div>
       <div style="background-color:#80A1C1; display:inline-block; align:center;">
       <center>
           <ul>
               <li><a href="/Category/Clothes">Clothes</a></li>
-              <li><a href="Category/Garden">Garden</a></li>
+              <li><a href="/Category/Garden">Garden</a></li>
               <li><a href="/Category/Kitchen">Kitchen</a></li>
+              <li><a href="/Category/Makeup">Makeup</a></li>
+              <li><a href="/Category/Home Design">Home Design</a></li>
+              <li><a href="/Category/Camping">Camping</a></li>
               <li><a href="/Category/Other">Other</a></li>
           </ul>
 </center>
       </div>
-      <div> 
-          <h1>Hack Of The Week</h1>
+      <div class='center'> 
+
+          <h1>
+         <center> Hack Of The Week</center>
+
+          </h1>
       </div>
       
 
