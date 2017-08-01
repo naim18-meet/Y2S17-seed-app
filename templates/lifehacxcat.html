@@ -2,6 +2,153 @@
 <html>
 <!--dont delete anything inside the head -->
 <head>
+  
+        <title>Life Hax</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <style> 
+        input[type=text] {
+        width: 200px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+      }
+
+        input[type=text]:focus {
+        width: 100%;
+      }
+    </style>
+    
+    <style>
+
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #80A1C1;
+        display:inline-block;
+        text-align:center;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+
+        font-size: 22px;
+        padding: 15px 51.57px;
+        text-decoration: none
+      }
+
+      li a:hover {
+        background-color: #7593B0;
+      }
+      </style>
+  </head>
+  <body>
+
+  <!-- Button to open the modal login form -->
+<button onclick="document.getElementById('id01').style.display='block'">Login</button>
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none' 
+>>>>>>> 702767c8ead6ac111a8e116f83a7efad9241d3a2
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content" action="/action_page.php">
+    <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Avatar" class="Avatar">
+    </div>
+
+
+    <div class="container">
+
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"><a href="#">Forgot password?</a></span>
+      </div>
+
+    </div>
+  </form>
+  <br>
+
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+</script>
+
+<br>
+
+      <div>
+          <form>
+              <input type="text" name="search" placeholder="Search...">
+          </form>
+
+          
+          <br>
+      </div>
+      <div style="background-color:#ffffff; display:inline-block; align:center;">
+      <center>
+          <ul>
+              <li><a href="/Category/Clothes">Clothes</a></li>
+              <li><a href="/Category/Garden">Garden</a></li>
+              <li><a href="/Category/Kitchen">Kitchen</a></li>
+              <li><a href="/Category/Makeup">Makeup</a></li>
+              <li><a href="/Category/Home Design">Home Design</a></li>
+              <li><a href="/Category/Camping">Camping</a></li>
+              <li><a href="/Category/Other">Other</a></li>
+          </ul>
+</center>
+      </div>
+      <div class='center'> 
+
+          <h1>
+         <center> Hack Of The Week</center>
+
+          </h1>
+      </div>
+
 <title>Categories</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="lifehaxcat.css">
