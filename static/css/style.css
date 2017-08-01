@@ -65,3 +65,20 @@ div {
 	text-align:center;
 
 }
+
+
+
+#play_button {
+    position:absolute;
+    transition: .5s ease;
+    top: 50%;
+    right: 50%;
+}
+
+.center{
+	text-align: center;
+}
+
+h1 {
+	font-weight: italic;
+}
