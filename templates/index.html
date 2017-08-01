@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Life Hax</title>
-      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 
-      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <title>Life Hax</title>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <style> 
+        input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+      }
+
+        input[type=text]:focus {
+        width: 100%;
+      }
+    </style>
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #80A1C1;
+        display:inline-block;
+        text-align:center;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 20px 20px;
+       text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #7593B0;
+      }
+      </style>
   </head>
   <body>
+
   <!-- Button to open the modal login form -->
 <button onclick="document.getElementById('id01').style.display='block'">Login</button>
 
@@ -52,4 +102,25 @@ window.onclick = function(event) {
     }
 }
 </script>
+
+      <div>
+          <form>
+              <input type="text" name="search" placeholder="Search..">
+          </form>
+      </div>
+      <div style="background-color:#80A1C1; display:inline-block; align:center;">
+      <center>
+          <ul>
+              <li><a href="/Category/Clothes">Clothes</a></li>
+              <li><a href="Category/Garden">Garden</a></li>
+              <li><a href="/Category/Kitchen">Kitchen</a></li>
+              <li><a href="/Category/Other">Other</a></li>
+          </ul>
+</center>
+      </div>
+      <div> 
+          <h1>Hack Of The Week</h1>
+      </div>
+      
+
 </html>
