@@ -61,10 +61,9 @@ h1 {
     from {transform: scale(0)} 
     to {transform: scale(1)}
 
-div {
-	text-align:center;
-
 }
+
+
 
 
 
@@ -81,8 +80,4 @@ div {
 
 h1 {
 	font-weight: italic;
-}
-
-iframe{
-	align-content: right; 
 }

@@ -22,7 +22,6 @@ session = DBSession()
 
 
 @app.route('/')
-
 def hello_world():
     return render_template('index.html')
 
@@ -42,6 +41,31 @@ def protected():
     return render_template('protected.html')
 
 
-##@app.route('/Makeup')
-##def Makeup()
+@app.route('/Category/Clothes')
+def Clothes():
+	return render_template('lifehacxcat.html')
+
+@app.route('/Category/Garden')
+def Garden():
+	return render_template('lifehacxcat.html')
+
+@app.route('/Category/Kitchen')
+def Kitchen():
+	return render_template('lifehacxcat.html')
+
+@app.route('/Category/Makeup')
+def Makeup():
+	return render_template('lifehacxcat.html')
+
+@app.route('/Category/HomeDesign')
+def Home_Design():
+	return render_template('lifehacxcat.html')
+
+@app.route('/Category/Camping')
+def Camping():
+	return render_template('lifehacxcat.html')
+
+@app.route('/Category/Other')
+def Other():
+	return render_template('lifehacxcat.html')
 
