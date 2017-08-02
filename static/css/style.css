@@ -1,5 +1,13 @@
+h2 {
+   color: blue;
+}
+
 h1 {
-  color: blue;
+   color:black;
+   text-align: center;
+   font-weight: bold;
+   font: Serif;
+   font-size: 450% ;
 }
 
 
