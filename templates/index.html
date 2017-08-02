@@ -61,7 +61,7 @@
         text-align: center;
 
         font-size: 23px;
-        padding: 15px 48.57px;
+        padding: 15px 50px;
         text-decoration: none
       }
 
@@ -385,8 +385,11 @@ window.onclick = function(event) {
 
 
 <!--Home Button-->
+  
 
   </form>
+
+  <a href="/">Home </a>
   <br>
   <div>
 
@@ -437,8 +440,8 @@ window.onclick = function(event) {
       <center>
           <ul>
               <li><a href="/Category/Clothes">Clothes</a></li>
-              <li><a href="/Category/Garden">Garden</a></li>
-              <li><a href="/Category/Kitchen">Kitchen</a></li>
+              <li><a href="/Category/Garden]]">Garden</a></li>
+              <li><a href="/Category/Food">Food</a></li>
               <li><a href="/Category/Makeup">Makeup</a></li>
               <li><a href="/Category/Home_Design">Home Design</a></li>
               <li><a href="/Category/Camping">Camping</a></li>
@@ -483,6 +486,7 @@ window.onclick = function(event) {
         <br>
         <br>
         <br>
+        <br>
 
 
 <hr>  
@@ -495,7 +499,7 @@ window.onclick = function(event) {
 
 
 
-<h2> Popular: </h2>
+<center> <h1> Recent </h1> </center>
 
 
 {% for post in posts %}
@@ -503,21 +507,33 @@ window.onclick = function(event) {
 
 <div style="float:left;margin-right:50px;">
 <iframe width="550" height="350" src={{post.video_url}} frameborder="0" allowfullscreen></iframe>
+</div>
 
   <h2> {{ post.title }} </h2>
   <br>
   <h4>{{ post.description }}</h4> 
   <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
 
-  </div>
+ 
+
+  
 
   {% endfor %}
-  <img src="/static/LOGO.png" alt="profile pic1" style="width:150px;height:100px;" align="right"> </img>
-
-
-<h5> Popular: </h5>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+  
 
 
 <button type="button"><a href="/Add_Hack">> Add Hack </button>
