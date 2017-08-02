@@ -69,3 +69,42 @@ def Camping():
 def Other():
 	return render_template('lifehacxcat.html')
 
+@app.route('/Add_Hack', methods=["GET", "POST"])
+def Add_Hack():
+	if request.method == "GET":
+		#show the webpage
+		return render_template('Add_Hack.html')	
+	if request.method == "POST":
+		vid_url = request.form.get("vid_url")
+		title = request.form.get("title")
+		category = request.form.get("category")
+		description = request.form.get("description")
+
+
+
+		new_post = Post(title=title, description=description,
+			video_url=vid_url,category=category)
+		
+		session.add(new_post)
+		session.commit()
+		return redirect(url_for('hello_world'))
+		# redirect
+
+
+	'''
+	THINGS IN A POST
+
+	title = Column(Text (50))
+ 	description = Column(String(1000))
+ 	video_url = Column(String(500))
+ 	category = Column(String(20))
+
+
+ 	BACKEND HTML
+
+	title
+	category
+	vid_url
+	description
+
+ 	'''
