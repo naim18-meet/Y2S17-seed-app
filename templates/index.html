@@ -478,7 +478,32 @@ window.onclick = function(event) {
 
       </div>
 
+
+
+
+
+
 <h2> Popular: </h2>
+
+
+{% for post in posts %}
+
+
+<div style="float:left;margin-right:50px;">
+<iframe width="550" height="350" src={{post.video_url}} frameborder="0" allowfullscreen></iframe>
+
+  <h2> {{ post.title }} </h2>
+  <br>
+  <h4>{{ post.description }}</h4> 
+  <br>
+
+  </div>
+
+  {% endfor %}
+  <img src="/static/LOGO.png" alt="profile pic1" style="width:150px;height:100px;" align="right"> </img>
+  }
+
+  
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 

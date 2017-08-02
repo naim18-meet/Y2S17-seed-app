@@ -23,7 +23,8 @@ session = DBSession()
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    posts=session.query(Post).all()    
+    return render_template('index.html' ,posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -55,7 +56,7 @@ def Kitchen():
 
 @app.route('/Category/Makeup')
 def Makeup():
-	return render_template('lifehacxcat.html')
+	return render_template(' .html')
 
 @app.route('/Category/HomeDesign')
 def Home_Design():
@@ -82,13 +83,22 @@ def Add_Hack():
 
 
 
+		
+
+
+		embed_video = vid_url
+		
+		vid_url = 'https://youtube.com/embed/'+ embed_video.split('=')[1]
+
 		new_post = Post(title=title, description=description,
 			video_url=vid_url,category=category)
-		
 		session.add(new_post)
 		session.commit()
 		return redirect(url_for('hello_world'))
+
 		# redirect
+@app.route('/', methods=["GET","POST"])
+def Add_user():
 
 
 	'''
