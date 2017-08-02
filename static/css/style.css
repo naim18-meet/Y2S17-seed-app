@@ -1,5 +1,5 @@
 h2 {
-   color: blue;
+   color: #7DD37D;
 }
 
 h1 {
@@ -93,4 +93,14 @@ li {
       width: -200px;
   height: -200px;
   border: 2px solid white;
+}
+
+
+.center{
+    color: #7DD37D;
+    text-align: center;
+    font-size: 40px;
+    font-family: serif;
+
+
 }
