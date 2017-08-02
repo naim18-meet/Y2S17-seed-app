@@ -98,7 +98,7 @@ def Add_Hack():
 
 		# redirect
 @app.route('/', methods=["GET","POST"])
-def Add_user():
+def Add_user():	
 
 
 	'''
