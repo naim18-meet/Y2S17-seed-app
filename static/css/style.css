@@ -1,5 +1,13 @@
+h2 {
+   color: blue;
+}
+
 h1 {
-  color: blue;
+   color:black;
+   text-align: center;
+   font-weight: bold;
+   font: Serif;
+   font-size: 450% ;
 }
 
 
@@ -78,6 +86,11 @@ h1 {
 	text-align: center;
 }
 
-h1 {
+h2 {
 	font-weight: italic;
+}
+li {
+      width: -200px;
+  height: -200px;
+  border: 2px solid white;
 }
