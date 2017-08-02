@@ -41,10 +41,12 @@ class Post(Base):
  	id = Column(Integer, primary_key=True)
     #user_id = relationship('User')
  	title = Column(Text (50))
- 	content = Column(String(1000))
+ 	description = Column(String(1000))
  	video_url = Column(String(500))
- 	image_url = Column(String(500))
  	category = Column(String(20))
+
+ 	def __repr__(self):
+ 		return self.title + " " + self.description + " " +self.video_url + " " + self.category
      # ADD YOUR FIELD BELOW ID
 
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Life Hax</title>
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+
+    <div id="container">
+      <div id="page-header">
+        <h1>Life Hax</h1>
+        <h2>Add Hack</h2>
+      </div>
+
+      <form action="/Add_Hack" method="post">
+      <input type="text" name="title" placeholder="Title your Hack"><br><br>
+            <input type="text" name="category" placeholder="Enter a category"><br><br>
+      <input type="text" name="vid_url" placeholder="Enter Video URL here"><br><br>
+            <textarea name="description" placeholder="Explain your hack!"></textarea>
+        
+        <br>
+
+        <input type="submit">
+    
+        
+        
+        
+      </form>
+
+      <a href="/" class="btn btn-info" role="button">Cancel</a>
+    </div>
+
+    <footer class="footer">
+      
+    </footer>
+
+  </body>
+</html>
