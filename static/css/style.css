@@ -127,7 +127,9 @@ h5{
 h2 {
 	font-weight: Helvetica;
 }
+
 li {
+    
       width: -200px;
   height: -200px;
   border: 2px solid white;
