@@ -460,26 +460,35 @@ window.onclick = function(event) {
 
           </h2>
 
-      </div>
       
-      <br>
-      <div> 
-
-<div style="float:left;margin-right:50px;">
-<iframe width="550" height="350" src="https://www.youtube.com/embed/sT4PDabVnWs" frameborder="0" allowfullscreen></iframe>
-</div>
-  <h2 style="color:green">Paperclip Hacks! </h2> 
-  <p>PaperClips can do it all! Who knew that these little pieces of metal that hold our papers could have so <br><br>many uses?! They can be used as phone stands, book markers, a tool for popping the simcard out of a <br><br>phone, to cover your laptop camera, fix broken zippers, and even as a clothes pin! Watch this video and <br><br>find out about the wonders paperclips can do!</p> 
-  <img src="/static/LOGO.png" alt="profile pic1" style="width:150px;height:100px;" align="right"> </img>
-
-
-
-      <br>
-      <p> Brought to you by the LifeHax team!<p>
-
       
-        <div>
         
+         <div> 
+
+
+
+
+          <div style="float:left;margin-right:50px;">
+          <iframe width="550" height="350" src="https://www.youtube.com/embed/sT4PDabVnWs" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <h3>Paperclip Hacks! </h3>
+          <br>
+          <h4>PaperClips can do it all!<br> They can be used as phone stands, book markers, a tool for <br> popping the simcard out of a phone, to cover your laptop camera, fix broken <br> zippers, and even as a clothes pin!</h4> 
+          <img src="/static/LOGO.png" alt="profile pic1" style="width:150px;height:100px;" align="right"> </img>
+          
+          
+
+
+
+
+      <br>
+
+      <h3> Brought to you by the LifeHax team!</h3>
+
+
+      
+        
+
         </div>
         <br>  
         <br>
@@ -487,6 +496,7 @@ window.onclick = function(event) {
         <br>
         <br>
         <br>
+
 
 
 <hr>  
@@ -499,7 +509,17 @@ window.onclick = function(event) {
 
 
 
+
 <center> <h1 style="color:darkorange"> Recent </h1> </center>
+
+ <!--<button> type="button"><a href="/Add_Hack"><b> Add Hack</b> </button> -->
+   <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
+   <a href="/Add_Hack">
+    <p class="Add Hack">Add Hack</p>
+    <!--<img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">-->
+  </div>
+
+
 
 
 {% for post in posts %}
@@ -536,6 +556,5 @@ window.onclick = function(event) {
   
 
 
-<button type="button"><a href="/Add_Hack">> Add Hack </button>
 
 </html>
