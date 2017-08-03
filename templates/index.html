@@ -61,7 +61,7 @@
         text-align: center;
 
         font-size: 23px;
-        padding: 15px 48.57px;
+        padding: 15px 50px;
         text-decoration: none
       }
 
@@ -293,7 +293,7 @@ button {
 
 <!--####################################################################-->
   
-  <body>
+  <body><!-- bgcolor="F6F3C7"-->
 
   <!-- Modal Login Form -->
   <img src="/static/LOGO.png" alt="profile pic1" style="width:150px;height:100px;" align="right"> </img>
@@ -385,8 +385,11 @@ window.onclick = function(event) {
 
 
 <!--Home Button-->
+  
 
   </form>
+
+  <a href="/">Home </a>
   <br>
   <div>
 
@@ -437,8 +440,8 @@ window.onclick = function(event) {
       <center>
           <ul>
               <li><a href="/Category/Clothes">Clothes</a></li>
-              <li><a href="/Category/Garden">Garden</a></li>
-              <li><a href="/Category/Kitchen">Kitchen</a></li>
+              <li><a href="/Category/Garden]]">Garden</a></li>
+              <li><a href="/Category/Food">Food</a></li>
               <li><a href="/Category/Makeup">Makeup</a></li>
               <li><a href="/Category/Home_Design">Home Design</a></li>
               <li><a href="/Category/Camping">Camping</a></li>
@@ -452,7 +455,7 @@ window.onclick = function(event) {
       <!-- Title -->
       <div class='center'> 
 
-          <h2
+         <h2 style="color:darkorange">
          <center> Hack Of The Week </center>
 
           </h2>
@@ -464,6 +467,7 @@ window.onclick = function(event) {
 
 
 
+
           <div style="float:left;margin-right:50px;">
           <iframe width="550" height="350" src="https://www.youtube.com/embed/sT4PDabVnWs" frameborder="0" allowfullscreen></iframe>
           </div>
@@ -471,17 +475,28 @@ window.onclick = function(event) {
           <br>
           <h4>PaperClips can do it all!<br> They can be used as phone stands, book markers, a tool for <br> popping the simcard out of a phone, to cover your laptop camera, fix broken <br> zippers, and even as a clothes pin!</h4> 
           <img src="/static/LOGO.png" alt="profile pic1" style="width:150px;height:100px;" align="right"> </img>
+          
+          
+
 
 
 
       <br>
+
       <h3> Brought to you by the LifeHax team!</h3>
+
 
       
         
-        
-   </div>
-         <br>
+
+        </div>
+        <br>  
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
 
 
 <hr>  
@@ -490,8 +505,7 @@ window.onclick = function(event) {
 
       </div>
 
-<h3> Popular: </h3>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 
@@ -501,5 +515,47 @@ window.onclick = function(event) {
     <p class="Add Hack">Add Hack</p>
     <!--<img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">-->
   </div>
+
+
+
+
+
+<center> <h1> Recent </h1> </center>
+
+
+{% for post in posts %}
+
+
+<div style="float:left;margin-right:50px;">
+<iframe width="550" height="350" src={{post.video_url}} frameborder="0" allowfullscreen></iframe>
+</div>
+
+  <h2> {{ post.title }} </h2>
+  <br>
+  <h4>{{ post.description }}</h4> 
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+ 
+
+  
+
+  {% endfor %}
+  
+
+
 
 </html>

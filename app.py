@@ -23,7 +23,8 @@ session = DBSession()
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    posts=session.query(Post).all()    
+    return render_template('index.html' ,posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -43,31 +44,38 @@ def protected():
 
 @app.route('/Category/Clothes')
 def Clothes():
-	return render_template('lifehacxcat.html')
+	posts=session.query(Post).filter_by(category="Clothes").all()
+	return render_template('lifehacxcat.html' ,posts=posts)
 
 @app.route('/Category/Garden')
 def Garden():
-	return render_template('lifehacxcat.html')
+	posts=session.query(Post).filter_by(category="Garden").all()
+	return render_template('lifehacxcat.html',posts=posts)
 
-@app.route('/Category/Kitchen')
-def Kitchen():
-	return render_template('lifehacxcat.html')
+@app.route('/Category/Food')
+def Food():
+	posts=session.query(Post).filter_by(category="Food").all()
+	return render_template('lifehacxcat.html', posts=posts)
 
 @app.route('/Category/Makeup')
 def Makeup():
-	return render_template('lifehacxcat.html')
+	posts=session.query(Post).filter_by(category="Makeup")
+	return render_template('lifehacxcat.html', posts=posts)
 
-@app.route('/Category/HomeDesign')
+@app.route('/Category/Home_Design')
 def Home_Design():
-	return render_template('lifehacxcat.html')
+	posts=session.query(Post).filter_by(category="Home_Design").all()
+	return render_template('lifehacxcat.html',posts=posts)
 
 @app.route('/Category/Camping')
 def Camping():
-	return render_template('lifehacxcat.html')
+	posts=session.query(Post).filter_by(category="Camping")
+	return render_template('lifehacxcat.html',posts=posts)
 
 @app.route('/Category/Other')
 def Other():
-	return render_template('lifehacxcat.html')
+	posts=session.query(Post).filter_by(category="Other").all()
+	return render_template('lifehacxcat.html', posts=posts)
 
 @app.route('/Add_Hack', methods=["GET", "POST"])
 def Add_Hack():
@@ -82,13 +90,35 @@ def Add_Hack():
 
 
 
+		
+
+
+		embed_video = vid_url
+		
+		vid_url = 'https://youtube.com/embed/'+ embed_video.split('=')[1]
+
 		new_post = Post(title=title, description=description,
 			video_url=vid_url,category=category)
-		
 		session.add(new_post)
 		session.commit()
 		return redirect(url_for('hello_world'))
+
 		# redirect
+@app.route('/', methods=["GET","POST"])
+def Add_user():	
+	if request.method == "GET":
+		return render_template('index.html')
+
+	if request.method == "POST":
+		first_name = request.form.get("first_name")
+		last_name = request.form.get("last_name")
+		user_name = first_name + " " +last_name
+		email = request.form.get("email")
+		psw = request.form.get("psw")
+
+		new_user = User(first_name=first_name, last_name=last_name, user_name=user_name, email=email,
+			psw_hash=psw)
+
 
 
 	'''

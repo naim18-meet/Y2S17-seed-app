@@ -13,9 +13,18 @@
         <h2>Add Hack</h2>
       </div>
 
-      <form action="/Add_Hack" method="post">
+      <form action="{{url_for('Add_Hack')}}" method="post">
       <input type="text" name="title" placeholder="Title your Hack"><br><br>
-            <input type="text" name="category" placeholder="Enter a category"><br><br>
+            <B>Select A Category</B> <BR>
+<SELECT NAME="category">
+<OPTION SELECTED> Clothes
+<OPTION> Garden
+<OPTION> Food
+<OPTION> Makeup
+<OPTION> Home Design
+<OPTION> Camping
+<OPTION> Other
+</SELECT><br><br>
       <input type="text" name="vid_url" placeholder="Enter Video URL here"><br><br>
             <textarea name="description" placeholder="Explain your hack!"></textarea>
         
