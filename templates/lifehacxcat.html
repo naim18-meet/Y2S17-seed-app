@@ -8,6 +8,8 @@
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 
 
+
+
         <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
@@ -500,6 +502,14 @@ function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
 </script>
+
+ <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
+   <a href="/Add_Hack">
+   <br>
+    <p class="Add Hack">Add Hack</p>
+     </a>
+    <!--<img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">-->
+  </div>
 
 </body>
 </html>
