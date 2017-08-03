@@ -12,7 +12,7 @@
         <h2>Add Hack</h2>
       </div>
 
-      <form action="{{url_for('Add_Hack')}}" method="post">
+      <form action="{{url_for('Add_Hack')}}" method="post"><br>
       <input type="text" name="title" placeholder="Title your Hack"><br><br>
             <B>Select A Category</B> <BR>
 <SELECT NAME="category">
@@ -24,19 +24,20 @@
 <OPTION> Camping
 <OPTION> Other
 </SELECT><br><br>
-      <input type="text" name="vid_url" placeholder="Enter Video URL here"><br><br>
-            <textarea name="description" placeholder="Explain your hack!"></textarea>
+      <input type="text" name="vid_url" placeholder="Enter video URL here"><br><br>
+            <textarea name="Description" placeholder="Explain your hack!"></textarea>
         
         <br>
 
         <input type="submit">
     
         
-        
+        <br>
         
       </form>
-
-      <a href="/" class="btn btn-info" role="button">Cancel</a>
+      <div class="cancel_btn"> 
+      <a href="/" class="cancel_btn" role="button">Cancel</a>
+      </div>
     </div>
 
     <footer class="footer">
