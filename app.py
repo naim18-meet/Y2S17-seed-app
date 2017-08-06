@@ -6,7 +6,8 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = "ITSASECRET"
 
 # flask-login imports
-from flask_login import login_required, current_user
+from flask.ext.login import LoginManager
+from flask_login import login_required, current_user 
 from login import login_manager, login_handler, logout_handler
 login_manager.init_app(app)
 
@@ -19,11 +20,12 @@ engine = create_engine('sqlite:///project.db')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
-
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 @app.route('/')
 def hello_world():
-    posts=session.query(Post).all()    
+    posts=session.query(Post).order_by("id desc").all()  
     return render_template('index.html' ,posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -59,7 +61,7 @@ def Food():
 
 @app.route('/Category/Makeup')
 def Makeup():
-	posts=session.query(Post).filter_by(category="Makeup")
+	posts=session.query(Post).filter_by(category="Makeup").all()
 	return render_template('lifehacxcat.html', posts=posts)
 
 @app.route('/Category/Home_Design')
@@ -69,7 +71,7 @@ def Home_Design():
 
 @app.route('/Category/Camping')
 def Camping():
-	posts=session.query(Post).filter_by(category="Camping")
+	posts=session.query(Post).filter_by(category="Camping").all()
 	return render_template('lifehacxcat.html',posts=posts)
 
 @app.route('/Category/Other')
@@ -88,11 +90,6 @@ def Add_Hack():
 		category = request.form.get("category")
 		description = request.form.get("description")
 
-
-
-		
-
-
 		embed_video = vid_url
 		
 		vid_url = 'https://youtube.com/embed/'+ embed_video.split('=')[1]
@@ -109,7 +106,7 @@ def Add_user():
 	if request.method == "GET":
 		return render_template('index.html')
 
-	if request.method == "POST":
+	else:
 		first_name = request.form.get("first_name")
 		last_name = request.form.get("last_name")
 		user_name = first_name + " " +last_name
@@ -118,6 +115,34 @@ def Add_user():
 
 		new_user = User(first_name=first_name, last_name=last_name, user_name=user_name, email=email,
 			psw_hash=psw)
+		return redirect(url_for('hello_world'))
+
+
+@login_manager.user_loader
+def load_user(user_id):
+	return User.get(user_id)
+
+@app.route('/login_form', methods=['GET', 'POST'])
+def login_form():
+    # Here we use a class of some kind to represent and validate our
+    # client-side form data. For example, WTForms is a library that will
+    # handle this for us, and we use a custom LoginForm to validate.
+	form = LoginForm()
+	if form.validate_on_submit():
+        # Login and validate the user.
+        # user should be an instance of your `User` class
+		login_user(user)
+
+		flask.flash('Logged in successfully.')
+
+		next = flask.request.args.get('next')
+        # is_safe_url should check if the url is safe for redirects.
+        # See http://flask.pocoo.org/snippets/62/ for an example.
+		if not is_safe_url(next):
+			return flask.abort(400)
+
+		return flask.redirect(next or flask.url_for('index'))
+	return flask.render_template('login.html', form=form)
 
 
 

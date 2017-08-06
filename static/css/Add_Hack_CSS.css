@@ -10,7 +10,7 @@ h1{
 h2{
 	color: darkorange;
 	text-align: center;
-	font-size: 30px;
+	font-size: 40px;
 	font-family: Helvetica;
 }
 /*-form of adding hack -------------------------------------------------------------------------------*/
@@ -34,6 +34,4 @@ form{
   height: 200px;
   border: 3px solid black;
   background: white;*/
-      border: 1px solid black;
-      outline-color: red;
-}
+     

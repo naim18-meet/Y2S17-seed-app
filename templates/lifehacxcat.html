@@ -376,14 +376,23 @@ window.onclick = function(event) {
     }
 }
 </script>
- <a href="/">Home </a>
+
+ <a href="/">Home</a>
+
+  
+
+
+<h1>
+    LIFE HAX
+  </h1>
+
+
+ </center>
 
 <br>
 
       <div>
-          <form>
-              <input type="text" name="search" placeholder="Search...">
-          </form>
+         
 
           
           <br>
@@ -404,17 +413,9 @@ window.onclick = function(event) {
       
 
 <title>Categories</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="lifehaxcat.css">
-<link rel="stylesheet" href="lifehaxcat.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Armani", sans-serif}
-.w3-bar-block .w3-bar-item {padding:20px}
-</style>
-</head>
 
-<body>
+
+
 
 <!-- Sidebar (hidden by default) -->
 <!--<nav class="w3-sidebar w3-bar-block w3-card-2 w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
@@ -436,6 +437,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Armani", sans-serif}
   
 
 <!-- !PAGE CONTENT! -->
+
+{% if posts|length > 0 %}}
+<h1> {{ posts[0].category }} Life hacks </h1>
+{% endif %}
 <br> <br>
   {% for post in posts %}
 
@@ -469,23 +474,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Armani", sans-serif}
   {% endfor %}
 
 
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="" class="w3-bar-item w3-black w3-button">1</a>
-      <a href="/2" class="w3-bar-item w3-button w3-hover-black">2</a>
-      <a href="/3" class="w3-bar-item w3-button w3-hover-black">3</a>
-      <a href="/4" class="w3-bar-item w3-button w3-hover-black">4</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-    </div>
-  </div>
-  
-  <hr id="about">
 
-  <!-- About Section -->
-  <div class="w3-container w3-padding-32 w3-center">  
-    
+
     
   
 
@@ -506,7 +496,8 @@ function w3_close() {
  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
    <a href="/Add_Hack">
    <br>
-    <p class="Add Hack">Add Hack</p>
+   
+<a href="/Add_Hack"><p class="plus">Add Hack</p></a>
      </a>
     <!--<img class="edit" src="https://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">-->
   </div>
