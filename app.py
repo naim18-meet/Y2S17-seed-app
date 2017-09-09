@@ -3,10 +3,8 @@ from flask import Flask, Response, render_template, request, redirect, url_for
 
 # flask setup
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "ITSASECRET"
 
 # flask-login imports
-from flask.ext.login import LoginManager
 from flask_login import login_required, current_user 
 from login import login_manager, login_handler, logout_handler
 login_manager.init_app(app)
@@ -20,13 +18,13 @@ engine = create_engine('sqlite:///project.db')
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
-login_manager = LoginManager()
+
 login_manager.init_app(app)
 
 @app.route('/')
 def hello_world():
-    posts=session.query(Post).order_by("id desc").all()  
-    return render_template('index.html' ,posts=posts)
+    posts=session.query(Post).order_by("id desc").all()
+    return render_template('index.html',posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -144,6 +142,10 @@ def login_form():
 		return flask.redirect(next or flask.url_for('index'))
 	return flask.render_template('login.html', form=form)
 
+
+
+if __name__ == "__main__":
+	app.run(host='0.0.0.0', debug=True, port=1134)
 
 
 	'''
